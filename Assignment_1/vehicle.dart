@@ -18,10 +18,3 @@ class Car extends Vehicle{
   }
 }
 
-main(){
-
- Car BMW = Car();
- BMW.setSpeed = 100;
-
-  BMW.move();
-}
