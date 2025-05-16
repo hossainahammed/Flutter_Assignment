@@ -54,7 +54,14 @@ class Flag_Card extends StatelessWidget {
                   const Spacer(),
                   ElevatedButton(
                     onPressed: () {},
-                    child: const Text('Explore'),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.arrow_forward, size: 16),
+                        SizedBox(width: 6),
+                        const Text('Explore',style: TextStyle(fontWeight:FontWeight.bold),),
+                      ],
+                    ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.teal,
                       minimumSize: const Size.fromHeight(36),
