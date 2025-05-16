@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Flag_Card.dart';
+
 class flag_app extends StatefulWidget {
   const flag_app({super.key});
 
@@ -8,24 +10,54 @@ class flag_app extends StatefulWidget {
 }
 
 class _flag_appState extends State<flag_app> {
+  final List<Map<String, String>> courses = List.generate(
+    12,
+        (index) => {
+      'title': 'Course Title $index',
+      'subtitle': 'Subtitle $index',
+          'flag': 'asset/${['BD', 'tv', 'tw', 'uy', 'uz', 'va', 'vc', 've', 'vg', 'vi', 'vu', 'wf'][index % 12]}.png',
+
+        },
+  );
+
+  int _getCrossAxisCount(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    if (width < 600) return 2; // Mobile
+    if (width < 1024) return 3; // Tablet
+    return 4; // Desktop
+  }
 
   @override
   Widget build(BuildContext context) {
-    Size screenSize = MediaQuery.of(context).size;
+    final crossAxisCount = _getCrossAxisCount(context);
+
     return Scaffold(
-      body: Column(
-        mainAxisAlignment:MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Container(
-              width: screenSize.width*0.5,
-              height: screenSize.height*0.5,
-            ),
-          )
-        ],
+      appBar: AppBar(
+        title: const Text('Responsive Flag Grid',textAlign: TextAlign.center,),
+        backgroundColor: Colors.teal,
+        centerTitle: true,
+
       ),
-
-
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          itemCount: courses.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: crossAxisCount,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            childAspectRatio: 0.7,
+          ),
+          itemBuilder: (context, index) {
+            final course = courses[index];
+            return Flag_Card(
+              title: course['title']!,
+              subtitle: course['subtitle']!,
+              flagUrl: course['flag']!,
+            );
+          },
+        ),
+      ),
     );
   }
 }
