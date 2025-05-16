@@ -28,8 +28,7 @@ class Flag_Card extends StatelessWidget {
               child: Image.asset(
                 flagUrl,
                 fit: BoxFit.cover,
-              )
-
+              ),
             ),
           ),
           Expanded(
@@ -37,10 +36,11 @@ class Flag_Card extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     title,
+                    textAlign: TextAlign.center,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
@@ -49,6 +49,7 @@ class Flag_Card extends StatelessWidget {
                   const SizedBox(height: 4),
                   Text(
                     subtitle,
+                    textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.grey[700]),
                   ),
                   const Spacer(),
@@ -56,10 +57,13 @@ class Flag_Card extends StatelessWidget {
                     onPressed: () {},
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: [
+                      children: const [
                         Icon(Icons.arrow_forward, size: 16),
                         SizedBox(width: 6),
-                        const Text('Explore',style: TextStyle(fontWeight:FontWeight.bold),),
+                        Text(
+                          'Explore',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       ],
                     ),
                     style: ElevatedButton.styleFrom(
