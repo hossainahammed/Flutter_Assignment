@@ -49,6 +49,8 @@ class Flag_Card extends StatelessWidget {
                   const SizedBox(height: 4),
                   Text(
                     subtitle,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.grey[700]),
                   ),
