@@ -11,7 +11,7 @@ class flag_app extends StatefulWidget {
 class _flag_appState extends State<flag_app> {
   final List<Map<String, String>> courses = [
     {'title': 'Bangladesh', 'subtitle': ' Web Dev with React', 'flag': 'asset/BD.png'},
-    {'title': 'BD', 'subtitle': ' Good For Cloud Computing', 'flag': 'asset/tv.png'},
+    {'title': 'USA', 'subtitle': ' Good For Cloud Computing', 'flag': 'asset/tv.png'},
     {'title': 'Taiwan (Republic of China)', 'subtitle': 'Good For Mobile Dev', 'flag': 'asset/tw.png'},
     {'title': 'Uruguay', 'subtitle': 'Good For Game Dev Basics', 'flag': 'asset/uy.png'},
     {'title': 'Uzbekistan', 'subtitle': 'Good For Big Data Analytics', 'flag': 'asset/uz.png'},
@@ -20,8 +20,8 @@ class _flag_appState extends State<flag_app> {
     {'title': 'Venezuela', 'subtitle': 'Good For AI & Robotics', 'flag': 'asset/ve.png'},
     {'title': 'British Virgin Islands', 'subtitle': 'Good For Cybersecurity', 'flag': 'asset/vg.png'},
     {'title': 'United States Virgin Islands', 'subtitle': 'Good For Full Stack Bootcamp', 'flag': 'asset/vi.png'},
-    {'title': 'BD', 'subtitle': 'Good For Flutter Development', 'flag': 'asset/wf.png'},
-    {'title': 'BD', 'subtitle': 'Good For UI/UX Design', 'flag': 'asset/ws.png'},
+    {'title': 'Bermuda', 'subtitle': 'Good For Flutter Development', 'flag': 'asset/wf.png'},
+    {'title': ' Samoa', 'subtitle': 'Good For UI/UX Design', 'flag': 'asset/ws.png'},
 
   ];
 
