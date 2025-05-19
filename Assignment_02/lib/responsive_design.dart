@@ -12,8 +12,8 @@ class _flag_appState extends State<flag_app> {
   final List<Map<String, String>> courses = [
     {'title': 'Bangladesh', 'subtitle': ' Web Dev with React', 'flag': 'asset/BD.png'},
     {'title': 'BD', 'subtitle': ' Good For Cloud Computing', 'flag': 'asset/tv.png'},
-    {'title': 'BD', 'subtitle': 'Good For Mobile Dev', 'flag': 'asset/tw.png'},
-    {'title': 'BD', 'subtitle': 'Good For Game Dev Basics', 'flag': 'asset/uy.png'},
+    {'title': 'Taiwan (Republic of China)', 'subtitle': 'Good For Mobile Dev', 'flag': 'asset/tw.png'},
+    {'title': 'Uruguay', 'subtitle': 'Good For Game Dev Basics', 'flag': 'asset/uy.png'},
     {'title': 'BD', 'subtitle': 'Good For Big Data Analytics', 'flag': 'asset/uz.png'},
     {'title': 'BD', 'subtitle': 'Good For Machine Learning', 'flag': 'asset/va.png'},
     {'title': 'BD', 'subtitle': 'Good For Cloud Computing', 'flag': 'asset/vc.png'},
