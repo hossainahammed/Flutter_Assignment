@@ -30,25 +30,38 @@ class _ContactListPageState extends State<ContactListPage> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text('Confirmation'),
-        content: Text('Are you sure for Delete?'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.cancel),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
-          IconButton(
-            icon: Icon(Icons.delete),
-            onPressed: () {
-              setState(() {
-                contacts.removeAt(index);
-              });
-              Navigator.of(context).pop();
-            },
-          ),
-        ],
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('Are you sure for Delete?'),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  icon: Icon(Icons.cancel, color: Colors.blueGrey),
+                  tooltip: 'Cancel',
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
+                SizedBox(width: 20),
+                IconButton(
+                  icon: Icon(Icons.delete, color: Colors.red),
+                  tooltip: 'Delete',
+                  onPressed: () {
+                    setState(() {
+                      contacts.removeAt(index);
+                    });
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
+
 
   @override
   Widget build(BuildContext context) {
