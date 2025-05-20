@@ -72,17 +72,26 @@ class _ContactListPageState extends State<ContactListPage> {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
+
+            SizedBox(height: 8),
             TextField(
               controller: nameController,
-              decoration: InputDecoration(labelText: 'Name'),
+              decoration: InputDecoration(
+                labelText: 'Name',
+                border: OutlineInputBorder(),
+              ),
             ),
-            SizedBox(height: 8),
+            SizedBox(height: 10),
             TextField(
               controller: numberController,
               keyboardType: TextInputType.number,
               inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-              decoration: InputDecoration(labelText: 'Number'),
+              decoration: InputDecoration(
+                labelText: 'Number',
+                border: OutlineInputBorder(),
+              ),
             ),
+
 
             SizedBox(height: 12),
             ElevatedButton(
