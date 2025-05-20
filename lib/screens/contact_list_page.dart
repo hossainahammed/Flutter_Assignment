@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../models/contact.dart';
 import '../widgets/contact_tile.dart';
 
@@ -78,9 +79,11 @@ class _ContactListPageState extends State<ContactListPage> {
             SizedBox(height: 8),
             TextField(
               controller: numberController,
-              keyboardType: TextInputType.phone,
+              keyboardType: TextInputType.number,
+              inputFormatters: [FilteringTextInputFormatter.digitsOnly],
               decoration: InputDecoration(labelText: 'Number'),
             ),
+
             SizedBox(height: 12),
             ElevatedButton(
               onPressed: addContact,
