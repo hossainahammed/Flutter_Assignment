@@ -132,8 +132,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               fontWeight: FontWeight.w700,
                             ),
                             recognizer:
-                                TapGestureRecognizer()
-                                  ..onTap = _onTapSignInButton,
+                            TapGestureRecognizer()
+                              ..onTap = _onTapSignInButton,
                           ),
                         ],
                       ),
@@ -173,20 +173,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
     });
     if (response.isSuccess) {
       _clearTextFields();
-     showSnackBarMessage(context,'Registration has been success.Please login');
+      showSnackBarMessage(context,'Registration has been success.Please login');
     } else {
       showSnackBarMessage(context, response.errorMessage!);
     }
   }
-void _clearTextFields(){
+  void _clearTextFields(){
     _firstNameTEController.clear();
-  _lastNameTEController.clear();
-  _emailTEController.clear();
-  _phoneTEController.clear();
-  _passwordTEController.clear();
+    _lastNameTEController.clear();
+    _emailTEController.clear();
+    _phoneTEController.clear();
+    _passwordTEController.clear();
 
 
-}
+  }
   void _onTapSignInButton() {
     Navigator.pop(context);
   }

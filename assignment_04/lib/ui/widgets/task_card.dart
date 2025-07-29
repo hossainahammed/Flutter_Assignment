@@ -25,7 +25,7 @@ class TaskCard extends StatefulWidget {
 
 class _TaskCardState extends State<TaskCard> {
   bool _updateTaskStatusInProgress = false;
-  bool _deleteInProgress = false; // Track delete operation
+  bool _deleteInProgress = false;
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +111,7 @@ class _TaskCardState extends State<TaskCard> {
           TextButton(
             onPressed: () {
               Navigator.pop(context);
-              _deleteTask(); // Call delete task method
+              _deleteTask();
             },
             child: const Text('Delete'),
           ),
@@ -188,13 +188,13 @@ class _TaskCardState extends State<TaskCard> {
 
   void _onTapTaskStatus(TaskType type) {
     if (type == widget.taskType) {
-      return; // No change needed if the status is the same
+      return;
     }
-    _updateTaskStatus(type.toString().split('.').last); // Convert enum to string
+    _updateTaskStatus(type.toString().split('.').last);
   }
 
   Future<void> _deleteTask() async {
-    _deleteInProgress = true; // Set delete in progress
+    _deleteInProgress = true;
     if (mounted) setState(() {});
 
     try {
@@ -203,13 +203,13 @@ class _TaskCardState extends State<TaskCard> {
       );
 
       if (response.isSuccess) {
-        widget.onStatusUpdate(); // Refresh the parent list
+        widget.onStatusUpdate();
         showSnackBarMessage(context, 'Task deleted successfully');
       } else {
         showSnackBarMessage(context, response.errorMessage ?? 'Delete failed');
       }
     } finally {
-      _deleteInProgress = false; // Reset delete in progress
+      _deleteInProgress = false;
       if (mounted) setState(() {});
     }
   }

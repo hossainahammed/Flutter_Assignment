@@ -12,7 +12,6 @@ import '../widgets/snackbar_message.dart';
 import 'Sign-Up-Screen.dart';
 import 'forgot_passaword_email_screen.dart';
 import 'main_nav_bar_holder_screen.dart';
-
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
   static const String name = '/sign-in';
@@ -105,8 +104,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                   fontWeight: FontWeight.w700,
                                 ),
                                 recognizer:
-                                    TapGestureRecognizer()
-                                      ..onTap = _onTapSignUpButton,
+                                TapGestureRecognizer()
+                                  ..onTap = _onTapSignUpButton,
                               ),
                             ],
                           ),
@@ -130,7 +129,7 @@ class _SignInScreenState extends State<SignInScreen> {
     Navigator.pushNamedAndRemoveUntil(
       context,
       MainNavBarHolderScreen.name,
-      (predicate) => false,
+          (predicate) => false,
     );
   }
 
@@ -163,7 +162,7 @@ class _SignInScreenState extends State<SignInScreen> {
       // Get.toNamed(MainNavBarHolderScreen.name);
       // If we want to it remove all previous screen then sign in .then we need to use   Get.offAllNamed(MainNavBarHolderScreen.name);
       Get.offAllNamed(MainNavBarHolderScreen.name);
-      
+
     } else {
       _signInProgress = false;
       setState(() {});
