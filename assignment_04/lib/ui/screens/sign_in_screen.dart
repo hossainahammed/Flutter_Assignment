@@ -151,17 +151,17 @@ class _SignInScreenState extends State<SignInScreen> {
 
       await AuthController.saveUserData(userModel, token);
 
-      // Navigator.pushNamedAndRemoveUntil(
-      //   context,
-      //   MainNavBarHolderScreen.name,
-      //   (predicate) => false,
-      // );
+      Navigator.pushNamedAndRemoveUntil(
+        context,
+        MainNavBarHolderScreen.name,
+        (predicate) => false,
+      );
       //--------------------------------- OR -------------------------
       // Get.to(() => const MainNavBarHolderScreen());
       //--------------------------------- OR -------------------------
       // Get.toNamed(MainNavBarHolderScreen.name);
       // If we want to it remove all previous screen then sign in .then we need to use   Get.offAllNamed(MainNavBarHolderScreen.name);
-      Get.offAllNamed(MainNavBarHolderScreen.name);
+      //Get.offAllNamed(MainNavBarHolderScreen.name);
 
     } else {
       _signInProgress = false;

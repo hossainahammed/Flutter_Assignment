@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:assignment_04/ui/screens/sign_in_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -142,17 +141,16 @@ class _changePasswordScreenState extends State<changePasswordScreen> {
   void _onTapSubmitButton() {
     if (_formkey.currentState!.validate()) {
       String newPassword = _passwordTEController.text.trim();
-      // Call the API to change the password
       _changePassword(newPassword);
     }
   }
   Future<void> _changePassword(String newPassword) async {
-    final url = '${Urls.baseUrl}/RecoverResetPassword'; // Construct the full URL
+    final url = '${Urls.baseUrl}/RecoverResetPassword';
     final headers = {
       'Content-Type': 'application/json',
-      'Accept': 'application/json', // Add this header
+      'Accept': 'application/json',
     };
-    final body = jsonEncode({'password': newPassword, }); // Adjust based on your API requirements
+    final body = jsonEncode({'password': newPassword, });
 
     try {
       final response = await http.post(Uri.parse(url), headers: headers, body: body);

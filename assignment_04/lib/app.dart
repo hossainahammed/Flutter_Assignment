@@ -8,82 +8,59 @@ import 'package:assignment_04/ui/screens/sign_in_screen.dart';
 import 'package:assignment_04/ui/screens/splash_screen.dart';
 import 'package:assignment_04/ui/screens/update_profile_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
+
+
 
 
 class TaskManagerApp extends StatelessWidget {
   const TaskManagerApp({super.key});
 
-  static GlobalKey<NavigatorState>navigator=GlobalKey<NavigatorState>();
+  static final GlobalKey<NavigatorState> navigator = GlobalKey<NavigatorState>();
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       navigatorKey: navigator,
-      theme:ThemeData(
+      theme: ThemeData(
         colorSchemeSeed: Colors.green,
-        textTheme: TextTheme(
-        titleLarge: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
-      ),
-        inputDecorationTheme: InputDecorationTheme(
-
-            fillColor: Colors.white,
-            filled: true,
-            contentPadding: EdgeInsets.symmetric(
-                horizontal: 16,vertical: 12
-            ),
-            hintStyle: TextStyle(
-                color: Colors.grey
-            ),
-            border: OutlineInputBorder(
-                borderSide: BorderSide.none
-            ),
-            enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide.none
-            ),
-            focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide.none
-            ),
-            errorBorder: OutlineInputBorder(
-                borderSide: BorderSide.none
-            ),
-
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
         ),
-        elevatedButtonTheme:ElevatedButtonThemeData(
+        inputDecorationTheme: const InputDecorationTheme(
+          fillColor: Colors.white,
+          filled: true,
+          contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          hintStyle: TextStyle(color: Colors.grey),
+          border: OutlineInputBorder(borderSide: BorderSide.none),
+          enabledBorder: OutlineInputBorder(borderSide: BorderSide.none),
+          focusedBorder: OutlineInputBorder(borderSide: BorderSide.none),
+          errorBorder: OutlineInputBorder(borderSide: BorderSide.none),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-              fixedSize: Size.fromWidth(double.maxFinite),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(4),
-              ),
-              padding: EdgeInsets.symmetric(vertical: 12),
-              backgroundColor: Colors.green,
-              foregroundColor: Colors.white
-
+            fixedSize: const Size.fromWidth(double.maxFinite),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+            padding: const EdgeInsets.symmetric(vertical: 12),
+            backgroundColor: Colors.green,
+            foregroundColor: Colors.white,
           ),
         ),
         textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(
-            foregroundColor: Colors.green
-
-          )
-        )
+          style: TextButton.styleFrom(foregroundColor: Colors.green),
+        ),
       ),
-      // home: SplashScreen(),
       initialRoute: '/',
-      routes:{
-        // '/':(context)=> SplashScreen(),
-        SplashScreen.name:(context)=> SplashScreen(),
-        SignInScreen.name:(context)=>SignInScreen(),
-        SignUpScreen.name:(context)=>SignUpScreen(),
-        ForgotPaswordEmailScreen.name:(context)=>ForgotPaswordEmailScreen(),
-        PinVerificationScreen.name:(context)=>PinVerificationScreen(email: '',),
-        changePasswordScreen.name:(context)=>changePasswordScreen(),
-        MainNavBarHolderScreen.name:(context)=>MainNavBarHolderScreen(),
-        AddNewTaskScreen.name:(context)=>AddNewTaskScreen(),
-        UpdateProfileScreen.name:(context)=>UpdateProfileScreen(),
-
-
-    },
+      routes: {
+        SplashScreen.name: (context) => const SplashScreen(),
+        SignInScreen.name: (context) => const SignInScreen(),
+        SignUpScreen.name: (context) => const SignUpScreen(),
+        ForgotPaswordEmailScreen.name: (context) => const ForgotPaswordEmailScreen(),
+        PinVerificationScreen.name: (context) => const PinVerificationScreen(email: ''),
+        changePasswordScreen.name: (context) => const changePasswordScreen(),
+        MainNavBarHolderScreen.name: (context) => const MainNavBarHolderScreen(),
+        AddNewTaskScreen.name: (context) => const AddNewTaskScreen(),
+        UpdateProfileScreen.name: (context) => const UpdateProfileScreen(),
+      },
     );
   }
 }

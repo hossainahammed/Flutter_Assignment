@@ -24,7 +24,7 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
   @override
   void initState() {
     super.initState();
-    // Optionally, you can send the OTP here if needed
+
   }
 
   @override
@@ -72,7 +72,7 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
                     controller: _otpTEController,
                     beforeTextPaste: (text) {
                       print("Allowing to paste $text");
-                      return true; // Allow pasting
+                      return true;
                     },
                     appContext: context,
                   ),
@@ -126,7 +126,7 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
   }
 
   void _showError(String message) {
-    if (!mounted) return; // Check if the widget is still mounted
+    if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
   }
 

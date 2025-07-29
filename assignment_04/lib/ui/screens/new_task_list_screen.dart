@@ -127,14 +127,14 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
       }
       _taskStatusCountList = list;
     } else {
-       // showSnackBarMessage(context, response.errorMessage!);
+
       if (mounted) {
         showSnackBarMessage(context, response.errorMessage!);
       }
     }
 
     _getTaskStatusCountInProgress = false;
-    // setState(() {});
+
     if (mounted) {
       setState(() {});
     }
@@ -144,14 +144,14 @@ class _NewTaskListScreenState extends State<NewTaskListScreen> {
     // Navigator.pushNamed(context, AddNewTaskScreen.name);
     
     // -----------------------------OR--------------------
-    // Navigator.push(context, MaterialPageRoute(builder: (context)=>AddNewTaskScreen()));
+     Navigator.push(context, MaterialPageRoute(builder: (context)=>AddNewTaskScreen()));
 
     // -------------------------------------- Or BY USING GETX Normal mode ------------------
 
     // Get.to(()=>AddNewTaskScreen());
 
    // ----------------------OR  If we want to Use Named version then ------------
-    Get.toNamed(AddNewTaskScreen.name);
+    //Get.toNamed(AddNewTaskScreen.name);
     // if we want to pop screen then in getx it is Get.back();
   }
 }
